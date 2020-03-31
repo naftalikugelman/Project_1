@@ -1,5 +1,7 @@
 package primitives;
 
+import java.util.Objects;
+
 /**
  * The type Point 3 d.
  */
@@ -122,5 +124,24 @@ public class Point3D {
      */
     public double distance(Point3D point){
         return Math.sqrt(distanceSquared(point));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Point3D)) return false;
+        Point3D point3D = (Point3D) o;
+        return Objects.equals(_x, point3D._x) &&
+                Objects.equals(_y, point3D._y) &&
+                Objects.equals(_z, point3D._z);
+    }
+
+    @Override
+    public String toString() {
+        return "Point3D{" +
+                "x=" + _x +
+                ", y=" + _y +
+                ", z=" + _z +
+                '}';
     }
 }
