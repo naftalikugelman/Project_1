@@ -141,7 +141,8 @@ public class Point3D {
         return "Point3D{" +
                 "x=" + _x +
                 ", y=" + _y +
-                ", z=" + _z +
+                ", " +
+                "z=" + _z +
                 '}';
     }
 }
