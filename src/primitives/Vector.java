@@ -63,8 +63,19 @@ public class Vector {
                 _head.get_z()._coord*_head.get_z()._coord);
     }
 
-    public double length(Vector vec){
-        return Math.sqrt(vec.lengthSquared());
+    public double length(){
+        return Math.sqrt(lengthSquared());
+    }
+
+    public  Vector normalize(){
+        double length = this.length();
+        if (length==0)
+            throw new ArithmeticException("Divide by zero!");
+        _head = new Point3D(_head.get_x()._coord/length(),
+                _head.get_y()._coord/length(),
+                _head.get_z()._coord/length());
+        return this;
+
     }
 
 
