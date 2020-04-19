@@ -26,7 +26,46 @@ public class Vector {
         this(vec._head);
     }
 
+    public Point3D get_head() {
+        return _head;
+    }
 
+    public Vector add(Vector vec){
+        return new Vector(_head.add(vec));
+    }
+
+    public Vector subtract(Vector vec){
+        return new Vector(_head.subtract(vec._head));
+    }
+
+    public Vector scale(double scalar){
+        return new Vector(new Point3D(scalar * _head.get_x()._coord,
+                scalar * _head.get_y()._coord,
+                scalar * _head.get_z()._coord));
+    }
+
+    public double dotProduct(Vector vec){
+        return(_head.get_x()._coord* vec._head.get_x()._coord +
+                _head.get_y()._coord* vec._head.get_y()._coord +
+                _head.get_z()._coord* vec._head.get_z()._coord);
+    }
+
+    public Vector crossProduct(Vector vec){
+        return new Vector(new Point3D(
+                _head.get_y()._coord*vec._head.get_z()._coord - _head.get_z()._coord*_head.get_y()._coord,
+                _head.get_z()._coord*_head.get_x()._coord - _head.get_x()._coord*_head.get_z()._coord,
+                _head.get_x()._coord*_head.get_y()._coord - _head.get_y()._coord*_head.get_x()._coord));
+    }
+
+    public double lengthSquared(){
+        return (_head.get_x()._coord*_head.get_x()._coord +
+                _head.get_y()._coord*_head.get_y()._coord +
+                _head.get_z()._coord*_head.get_z()._coord);
+    }
+
+    public double length(Vector vec){
+        return Math.sqrt(vec.lengthSquared());
+    }
 
 
 
