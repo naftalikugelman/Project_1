@@ -4,11 +4,14 @@ import java.util.Objects;
 
 /**
  * The type Point 3 d.
+ *
+ * @author Naftali Kugelman
  */
 public class Point3D {
 
     /**
      * The constant ZERO point.
+     *
      */
     public static final Point3D ZERO = new Point3D(0.0, 0.0, 0.0);
 
