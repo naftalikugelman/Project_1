@@ -54,9 +54,9 @@ public class Vector {
 
     public Vector crossProduct(Vector vec){
         return new Vector(new Point3D(
-                _head.get_y()._coord*vec._head.get_z()._coord - _head.get_z()._coord*_head.get_y()._coord,
-                _head.get_z()._coord*_head.get_x()._coord - _head.get_x()._coord*_head.get_z()._coord,
-                _head.get_x()._coord*_head.get_y()._coord - _head.get_y()._coord*_head.get_x()._coord));
+                _head.get_y()._coord*vec._head.get_z()._coord - _head.get_z()._coord*vec._head.get_y()._coord,
+                _head.get_z()._coord*vec._head.get_x()._coord - _head.get_x()._coord*vec._head.get_z()._coord,
+                _head.get_x()._coord*vec._head.get_y()._coord - _head.get_y()._coord*vec._head.get_x()._coord));
     }
 
     public double lengthSquared(){
