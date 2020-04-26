@@ -65,6 +65,7 @@ public class Vector {
                 _head.get_z()._coord*_head.get_z()._coord);
     }
 
+
     public double length(){
         return Math.sqrt(lengthSquared());
     }
